@@ -1,0 +1,28 @@
+﻿@model Accident.Models.Models.AccidentModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Incident Number</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Title</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Title">
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="dd/mm/yy">
+    </div>
+    <div class="form-group">
+        <label for="exampleCheck1">Description</label>
+        <textarea rows="4" cols="50" type="text" class="form-control" id="exampleCheck1">  </textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleCheck1">Report(s):</label>
+        <input type="file" class="form-control" id="exampleCheck1">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

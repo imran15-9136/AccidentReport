@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Accident.BLL.Abstraction\Accident.BLL.Abstraction.csproj" />
+    <ProjectReference Include="..\Accident.Models\Accident.Models.csproj" />
+    <ProjectReference Include="..\Accident.Repo.Abstraction\Accident.Repo.Abstraction.csproj" />
+  </ItemGroup>
+
+</Project>
