@@ -14,5 +14,6 @@ namespace Accident.Database
         }
 
         DbSet<AccidentModel> Accidents { get; set; }
+
     }
 }

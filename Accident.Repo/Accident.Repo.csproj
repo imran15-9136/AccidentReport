@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Accident.Database\Accident.Database.csproj" />
     <ProjectReference Include="..\Accident.Models\Accident.Models.csproj" />
     <ProjectReference Include="..\Accident.Repo.Abstraction\Accident.Repo.Abstraction.csproj" />
   </ItemGroup>

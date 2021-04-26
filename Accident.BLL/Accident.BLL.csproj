@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Accident.BLL.Abstraction\Accident.BLL.Abstraction.csproj" />
     <ProjectReference Include="..\Accident.Models\Accident.Models.csproj" />
     <ProjectReference Include="..\Accident.Repo.Abstraction\Accident.Repo.Abstraction.csproj" />
