@@ -62,7 +62,7 @@ namespace Acciden
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Accident}/{action=Create}/{id?}");
             });
         }
     }

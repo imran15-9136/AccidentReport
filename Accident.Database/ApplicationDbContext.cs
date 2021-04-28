@@ -13,7 +13,8 @@ namespace Accident.Database
 
         }
 
-        DbSet<AccidentModel> Accidents { get; set; }
+        public DbSet<AccidentModel> Accidents { get; set; }
+        public DbSet<HtmlEle> HtmlEles { get; set; }
 
     }
 }

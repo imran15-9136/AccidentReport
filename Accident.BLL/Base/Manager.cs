@@ -58,7 +58,7 @@ namespace Accident.BLL.Base
                 return Result.Failure(new[] { "Unable to remove" });
             }
 
-            public async virtual Task<ICollection<T>> GetAll()
+            public async virtual Task<IList<T>> GetAll()
             {
                 return await _repository.GetAll();
             }

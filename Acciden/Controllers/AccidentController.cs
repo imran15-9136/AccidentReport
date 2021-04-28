@@ -24,8 +24,12 @@ namespace Acciden.Controllers
             _mapper = mapper;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var data = await _manager.GetAll();
+            int incedenceNo = data.Count() + 1;
+            ViewBag.AccidentNo = incedenceNo;
+            //ViewBag.Form = "";
             return View();
         }
 
@@ -50,6 +54,17 @@ namespace Acciden.Controllers
             return View();
         }
 
+        [HttpPost]
+        public JsonResult AjaxMethod(string name)
+        {
+            return Json("Method Call");
+        }
+
+        public async Task<JsonResult> Create2()
+        {
+            return Json(false);
+        }
+
         public string List()
         {
             return "List Return";
@@ -66,7 +81,7 @@ namespace Acciden.Controllers
                     Directory.CreateDirectory(filePath);
                 }
 
-                uniqueFilename = Guid.NewGuid().ToString() + "_" + model.FileName;
+                uniqueFilename = Guid.NewGuid().ToString() + '_' + model.FileName;
                 string location = Path.Combine(filePath, uniqueFilename);
 
                 using (var stream = System.IO.File.Create(location))

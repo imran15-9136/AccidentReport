@@ -13,7 +13,7 @@ namespace Accident.Repo.Abstraction.Base
         Task<bool> AddRangeAsync<T>(ICollection<T> entities) where T : class;
         Task<bool> Update(T entity);
         Task<bool> Remove(T entity);
-        Task<ICollection<T>> GetAll();
+        Task<IList<T>> GetAll();
         Task<T> GetById(long id);
         Task<T> GetFirstorDefault(Expression<Func<T, bool>> predicate);
 

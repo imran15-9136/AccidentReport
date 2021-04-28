@@ -4,7 +4,9 @@ using Accident.Repo.Abstraction.Accident;
 using Accident.Repo.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Accident.Repo.Accident
 {

@@ -11,7 +11,7 @@ namespace Accident.BLL.Abstraction.Base
         Task<Result> Add(T entity);
         Task<Result> Update(T entity);
         Task<Result> Remove(long id);
-        Task<ICollection<T>> GetAll();
+        Task<IList<T>> GetAll();
         Task<T> GetById(long id);
         Task<T> GetFirstorDefault(int id);
     }

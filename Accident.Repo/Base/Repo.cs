@@ -41,7 +41,7 @@ namespace Accident.Repo.Base
             return await _db.SaveChangesAsync() > 0;
         }
 
-        public async virtual Task<ICollection<T>> GetAll()
+        public async virtual Task<IList<T>> GetAll()
         {
             return await _db.Set<T>().ToListAsync();
         }
