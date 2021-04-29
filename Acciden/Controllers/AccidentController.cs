@@ -24,8 +24,11 @@ namespace Acciden.Controllers
             _mapper = mapper;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var data = await _manager.GetAll();
+            int incedenceNo = data.Count() + 1;
+            ViewBag.AccidentNo = incedenceNo;
             return View();
         }
 

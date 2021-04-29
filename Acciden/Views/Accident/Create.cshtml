@@ -10,13 +10,13 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form enctype="multipart/form-data" asp-action="Create" method="post">
+        @*<form enctype="multipart/form-data" asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
+            <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
                 <input asp-for="Id" class="form-control" />
                 <span asp-validation-for="Id" class="text-danger"></span>
-            </div>*@
+            </div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
@@ -40,7 +40,37 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+        </form>*@
+        <form enctype="multipart/form-data" asp-action="Create" method="post">
+            <div>General Details</div>
+            <div>
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label">Incident Number: </label>
+                    <label asp-for="Id" class="control-label">@ViewBag.AccidentNo</label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" for="exampleInputPassword1">Title</label>
+                    <input asp-for="Title" type="text" class="form-control" id="Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" for="date">Date</label>
+                    <input asp-for="Date" type="date" class="form-control" id="Date" placeholder="dd/mm/yy">
+                </div>
+            </div>
+            <div>Incident Details</div>
+            <div>
+                <div class="form-group">
+                    <label asp-for="Description" for="exampleCheck1">Description</label>
+                    <textarea asp-for="Description" rows="4" cols="50" type="text" class="form-control" id="exampleCheck1">  </textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="File" for="exampleCheck1">Report(s):</label>
+                    <input asp-for="File" type="file" class="form-control" id="exampleCheck1">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
     </div>
 </div>
 
