@@ -27,4 +27,8 @@
     <ProjectReference Include="..\Accident.Repo\Accident.Repo.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\AccidentFile\" />
+  </ItemGroup>
+
 </Project>

@@ -27,10 +27,6 @@ namespace Acciden
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //services.AddDbContextPool<ApplicationDbContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-
             services.AddControllersWithViews();
 
             services.AddAutoMapper(typeof(Startup).Assembly);
@@ -62,7 +58,7 @@ namespace Acciden
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Accident}/{action=Create}/{id?}");
             });
         }
     }

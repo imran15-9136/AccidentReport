@@ -17,11 +17,12 @@ namespace Acciden.Controllers
     {
         private readonly IAccidentBLL _manager;
         private readonly IMapper _mapper;
-        private readonly IHostingEnvironment _hostingvironment;
-        public AccidentController(IAccidentBLL manager, IMapper mapper)
+        private readonly IWebHostEnvironment _hostingvironment;
+        public AccidentController(IAccidentBLL manager, IMapper mapper, IWebHostEnvironment hostEnvironment)
         {
             _manager = manager;
             _mapper = mapper;
+            _hostingvironment = hostEnvironment;
         }
 
         public async Task<IActionResult> Create()
@@ -35,22 +36,29 @@ namespace Acciden.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(AccidentCreateDto model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                if (model.File!= null)
+                if (ModelState.IsValid)
                 {
-                    string filePath = Path.Combine(_hostingvironment.WebRootPath, "AccidentFile");
-                    model.FilePath = await ProcessUploadFileAsync(model.File, filePath);
-                }
+                    if (model.File != null)
+                    {
+                        string filePath = Path.Combine(_hostingvironment.WebRootPath, "AccidentFile");
+                        model.FilePath = await ProcessUploadFileAsync(model.File, filePath);
+                    }
 
-                var data = _mapper.Map<AccidentModel>(model);
-                var result = await _manager.Add(data);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("List");
+                    var data = _mapper.Map<AccidentModel>(model);
+                    var result = await _manager.Add(data);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("List");
+                    }
                 }
+                return View();
             }
-            return View();
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string List()
